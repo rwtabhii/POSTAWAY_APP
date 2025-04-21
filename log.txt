@@ -1,0 +1,4 @@
+{"level":"info","message":null}
+{"level":"info","message":null}
+{"level":"info","message":null}
+{"level":"info","message":"/api/posts - undefined","service":"request-logging"}
