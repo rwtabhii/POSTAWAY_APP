@@ -1,4 +1,4 @@
-import { userModel } from "./user-model.js";
+import { userModel } from "../user/user.model.js";
 import jwt from "jsonwebtoken";
 
 
