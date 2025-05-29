@@ -1,6 +1,6 @@
 # Postaway Backend
 
-Postaway is a backend project built using **Node.js** and **Express.js** following **REST API architecture**. It includes features for managing users, posts, likes, and comments. The APIs are tested using **Postman**.
+Postaway is a backend project built using Node.js and Express.js following REST API architecture & with Database of MongoDB ORM liberary Mongoose. It includes features for managing users, posts, likes, and comments. The APIs are tested using Postman. & Documentation using Swagger
 
 ## Features
 
