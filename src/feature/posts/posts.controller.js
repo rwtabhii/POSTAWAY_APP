@@ -1,4 +1,4 @@
-import { applicationError } from "../middleware/errorhandling.js";
+import { applicationError } from "../../middleware/errorhandling.js";
 import { postModel, posts } from "./posts.model.js";
 
 

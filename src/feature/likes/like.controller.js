@@ -1,5 +1,5 @@
 import { likeModel, likes } from "./like.model.js";
-import { applicationError } from "../middleware/errorhandling.js";
+import { applicationError } from "../../middleware/errorhandling.js";
 
 export class likeController {
     getPostLikes(req, res) {

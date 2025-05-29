@@ -1,18 +1,22 @@
+import  {env} from  "./src/config/env.js";
 import express from "express";
-import jwtAuth from "./feature/src/middleware/jwttoken.js";
-import userRouter from "./feature/src/user/user.route.js";
-import postRouter from "./feature/src/posts/posts.route.js";
-import likeRouter from "./feature/src/likes/like.route.js";
-import commentRouter from "./feature/src/comments/comment.route.js";
-import uploadFile from "./feature/src/middleware/fileUploadmiddleware.js";
-import { applicationError } from "./feature/src/middleware/errorhandling.js";
-import bookmarkRoute from "./feature/src/bookmarks/bookmark.route.js";
-import loggerMiddleware from "./feature/src/middleware/logger.middleware.js";
+import jwtAuth from "./src/middleware/jwttoken.js";
+import userRouter from "./src/feature/user/user.route.js"
+import postRouter from "./src/feature/posts/posts.route.js"
+import likeRouter from "./src/feature/likes/like.route.js";
+import commentRouter from "./src/feature/comments/comment.route.js";
+import uploadFile from "./src/middleware/fileUploadmiddleware.js"
+import { applicationError } from "./src/middleware/errorhandling.js"
+import bookmarkRoute from "./src/feature/bookmarks/bookmark.route.js";
+import loggerMiddleware from "./src/utils/logger.middleware.js"
+import { createDbConnection } from "./src/config/mongodb.config.js";
+import cookieParser from "cookie-parser";
 
 
 const server = express();
 server.use(express.json())
 server.use(loggerMiddleware);
+server.use(cookieParser());
 
 server.use("/api/users",userRouter);
 server.use("/api/posts",jwtAuth,uploadFile.single("image"),postRouter);
@@ -36,6 +40,8 @@ server.use((err,req,res,next)=>{
 })
 
 
-
-server.listen(3000);
+// console.log(env);
+server.listen(env.port,()=>{
+    createDbConnection();
+});
 console.log("server is listening");

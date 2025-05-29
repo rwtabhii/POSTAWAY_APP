@@ -1,4 +1,4 @@
-import { applicationError } from "../middleware/errorhandling.js";
+import { applicationError } from "../../middleware/errorhandling.js";
 import { comments } from "../comments/comment.model.js";
 import { likes } from "../likes/like.model.js";
 

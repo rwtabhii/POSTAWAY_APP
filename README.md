@@ -8,6 +8,9 @@ Postaway is a backend project built using **Node.js** and **Express.js** followi
   - Register
   - Login
   - Authentication (JWT based)
+  - Get User Data
+  - Get All User Data
+  - Update the User Data 
 
 - **Posts**
   - Create, Read, Update, Delete (CRUD operations)
@@ -22,18 +25,25 @@ Postaway is a backend project built using **Node.js** and **Express.js** followi
 
 - Node.js
 - Express.js
+- Multer (For File Upload)
 - JSON Web Token (JWT) for authentication
 - Postman for API testing
 
 ## Folder Structure
 ```
 postaway-backend/
-├── feature/src/
-│            ├── controllers/
-│            ├── models/
-│            ├── routes/
-│            ├── middlewares/
-│            └── assests/
+├── src/feature/
+│             ├──user/               
+│                   ├── controllers/ 
+│                   ├── models/
+│                   ├── routes/
+│                   ├──repository/
+│                   ├──schemas            
+│        
+│  
+├──utils/
+├── middlewares/
+├── assests/            
 ├── .env
 ├── .gitignore
 ├── package.json
@@ -72,6 +82,10 @@ All routes are tested using **Postman**. Import the Postman collection or manual
 ### User Routes
 - `POST /api/users/register`
 - `POST /api/users/login`
+- `GET  /api/users/logout`
+- `GET /api/users/:id`    
+- `GET /api/users/`
+- `POST /api/users/details` 
 
 ### Post Routes
 - `GET /api/posts`
